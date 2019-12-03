@@ -1,0 +1,157 @@
+@using SisCaVet.Models
+@model Animal
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers 
+
+@{
+    Layout= "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- Barra de navegação (Home > Animal > Cadastrar) -->
+<nav class="green lighten-3">
+    <div class="nav-wrapper container">
+
+        <!-- Logo Titulo -->
+        <a href="/Home/Index" class="brand-logo right">SisCaVet</a>
+        
+        <div class="row">
+            <div class="col s0 m0 l2"></div>
+            <div class="col s12 m12 l10">
+                    
+                <!-- Botão de Menu que não aparece em tela grande -->
+                <a href="#" data-activates="nav-mobile" class="button-collapse full hide-on-large-only">
+                    <i class="material-icons">menu</i>
+                </a>
+                <div>
+                    <a href="/Home/Index" class="breadcrumb">Home</a>
+                    <a href="/Animal/Index" class="breadcrumb">Animal</a>
+                    <a href="#!" class="breadcrumb">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Página -->
+<div class="row">
+    <div class="col s0 m0 l2"></div>
+    <div class="col s12 m12 l10">
+        
+        <div class="row valign-wrapper">
+            <div class="col s10">
+
+                <form  action="/Animal/Create" method="post">
+                        <h2 class="green-text text-lighten-3">Cadastrar Animal</h2>
+                        <br/>  
+
+                        <div class="row valign-wrapper">
+                            <div class="col s11 m10 l9">
+
+                                <!-- Separar os campos em duas colunas-->   
+                                <div class="row">
+                                    <div class="col s12 m6">
+
+                                        <!-- Campo Nome --> 
+                                        <div class="row">                           
+                                            <div class="col s12">
+                                                <p>Nome</p>
+                                                <input placeholder="Nome" asp-for="Nome"/>
+                                                <span asp-validation-for="Nome"></span>
+                                            </div>
+                                        </div>  
+
+                                        <!-- Campo Espécie --> 
+                                        <div class="row">                           
+                                            <div class="col s12">
+                                                <p>Espécie</p>
+                                                <input placeholder="Espécie" asp-for="Especie"/>
+                                                <span asp-validation-for="Especie"></span>
+                                            </div>
+                                        </div> 
+
+                                        <!-- Campo Idade --> 
+                                        <div class="row">                           
+                                            <div class="col s12">
+                                                <p>Idade</p>
+                                                <input placeholder="Idade" asp-for="Idade"/>
+                                                <span asp-validation-for="Idade"></span>
+                                            </div>
+                                        </div> 
+                                    </div>
+
+                                    <!--<div class="col s12 m6">
+                                         Campo Dono  
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <p>Dono</p>
+                                                <input placeholder="Dono" asp-for="Cliente"/>
+                                                <span asp-validation-for="Cliente"></span>
+                                            </div>
+                                        </div>-->
+
+                                         <div class="col s12 m6">
+                                        <!-- Campo proprietario do animal --> 
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <p>Proprietário do Animal</p>
+                                                <select asp-for="Cliente.Id">
+                                                    @foreach(var c in ViewBag.Clientes)
+                                                    {
+                                                        <option value="@c.Id">@c.Nome</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>                                   
+
+                                        <!-- Campo Raça --> 
+                                        <div class="row">                           
+                                            <div class="col s12">
+                                                <p>Raça</p>
+                                                <input placeholder="Raça" asp-for="Raca"/>
+                                                <span asp-validation-for="Raca"></span>
+                                            </div>
+                                        </div> 
+
+                                        <!-- Campo Peso --> 
+                                        <div class="row">                           
+                                            <div class="col s12">
+                                                <p>Peso</p>
+                                                <input placeholder="Peso" asp-for="Peso"/>
+                                                <span asp-validation-for="Peso"></span>
+                                            </div>
+                                        </div> 
+                                    </div>
+
+                                    <!-- Campo Descricao -->                          
+                                        <div class="col s12">
+                                            <p>Descrição</p>
+                                            <input placeholder="Descricao" asp-for="Descricao"/>
+                                            <span asp-validation-for="Descricao"></span>
+                                        </div>
+
+
+                                    <!-- Botão -->
+                                    <div class="row">
+                                        <div class="col s5">
+                                            <button class="btn waves-effect waves-light">Salvar</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col s0 m1 l2"></div>
+
+                            
+                        </div>
+
+                </form>
+            </div>
+
+            <div class="col s1"></div>
+        </div>
+    </div>
+</div>
+
+
+    

@@ -1,0 +1,126 @@
+@using SisCaVet.Models
+
+@model List<Cliente>
+
+@{
+    Layout= "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- Barra de navegação (Home > Cliente      SisCaVet) -->
+<nav class="top-nav green lighten-3">
+     <div class="nav-wrapper container">
+          <!-- Logo Titulo -->
+          <a href="/Home/Index" class="brand-logo right">SisCaVet</a>
+          <!-- Botão de Menu que não aparece em tela grande -->
+          <div class="row">
+                <div class="col s0 m0 l2"></div>
+                <div class="col s12 m12 l10">
+                    <a href="#" data-activates="nav-mobile" class="button-collapse full hide-on-large-only">
+                         <i class="material-icons">menu</i>
+                    </a>
+                    <div>
+                         <a href="/Home/Index" class="breadcrumb">Home</a>
+                         <a href="#!" class="breadcrumb">Cliente</a>
+                    </div>
+               </div>
+          </div>
+     </div>
+</nav>
+<div class="row">
+    <div class="col s0 m0 l2"></div>
+    <div class="col s12 m12 l10">
+        
+        <div class="row valign-wrapper">
+            <div class="col s10">
+            
+                
+                <h2 class="green-text text-lighten-3">Clientes</h2>
+
+                <!--<div class="row valign-wrapper">
+                    <div class="col s12 m9 l10">-->
+
+                            <!-- Botão icone add -->
+                            <div class="right-align">
+                                <a class="btn btn-small waves-effect waves-light" href="/Cliente/Create"><i class="material-icons">add</i></a>
+                            </div>
+
+                        <!-- Tabela Procedimentos -->
+                        <table class="striped centered">
+                            <thead>
+                                <tr>
+                                        <th>Nome</th>
+                                        <th>CPF</th>
+                                        <th>RG</th>
+                                        <th>Data de Nascimento</th>
+                                        <th>Telefone</th>
+                                        <th>Consultas abertas</th>
+                                        <th>Longadouro</th>
+                                        <th>Bairro</th>
+                                        <th>CEP</th>
+                                        <th>Cidade</th>
+                                        <th>Estado</th>
+                                        <th></th>
+                                        <th></th>
+                                </tr>
+                            </thead>
+                            @foreach(var cliente in Model)
+                            {
+                                <tr>
+                                        <td>                   
+                                            @cliente.Nome
+                                        </td>                
+                                        <td>
+                                            @cliente.Cpf
+                                        </td>
+                                        <td>                   
+                                            @cliente.Rg
+                                        </td>                
+                                        <td>
+                                            @cliente.DataNascimento
+                                        </td>
+                                        <td>                   
+                                            @cliente.Telefone
+                                        </td>                
+                                        <td>
+                                            @cliente.QuantidadeConsultasAberto
+                                        </td>
+                                        <td>
+                                            @cliente.Longadouro
+                                        </td>
+                                        <td>
+                                            @cliente.Bairro
+                                        </td>
+                                        <td>
+                                            @cliente.Cep
+                                        </td>
+                                        <td>
+                                            @cliente.Cidade
+                                        </td>
+                                        <td>
+                                            @cliente.Estado
+                                        </td>
+                                        <td>
+                                            <a class="" href="/Cliente/Update/@cliente.Id"><i class="material-icons">edit</i></a>
+                                        </td>  
+                                        <td>
+                                            <a class="" href="/Cliente/Delete/@cliente.Id"><i class="material-icons">delete</i></a>
+                                        </td>        
+                                </tr>
+                            }          
+                        </table>
+
+                        <!--</div>
+                        <div class="col hide-on-small-only m2 l1"></div>
+                </div>-->
+
+            
+
+            
+            </div>
+
+            <div class="col s1"></div>
+        </div>
+    </div>
+</div>
+
+

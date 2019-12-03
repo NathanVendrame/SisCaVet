@@ -1,0 +1,89 @@
+﻿
+<html>
+    <head>
+        
+        <meta charset="utf-8"/>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>SisCaVet</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <!-- Icone -->
+        <link rel="apple-touch-icon" sizes="57x57" href="~/images/favicon1/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="~/images/favicon1/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="~/images/favicon1/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="~/images/favicon1/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="~/images/favicon1/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="~/images/favicon1/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="~/images/favicon1/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="~/images/favicon1/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="~/images/favicon1/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="~/images/favicon1/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon1/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="~/images/favicon1/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon1/favicon-16x16.png">
+        <link rel="manifest" href="~/images/favicon1/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="~/images/favicon1/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+     
+    </head>
+    <body style>
+
+
+        <!-- Barra Lateral -->
+        <ul id="nav-mobile" class="side-nav fixed" style="width: 300px; transform: translateX(-100%);">
+            <li class="logo">
+                <div class="center-align">
+                    <a id="logo-container" href="#" class="brand-logo ">
+                        <img src="~/images/Logo1.png" width="125px" height="125px"/>
+                    </a>
+                </div>
+            </li>
+            <li><div class="divider"></div></li>
+            <li><a href="/Cliente/Index" class="waves-effect"> Clientes </a></li>
+            <li><a href="/Animal/Index" class="waves-effect"> Animais </a></li>
+            <li><a href="/Veterinario/Index" class="waves-effect"> Veterinários </a></li>
+            <li><a href="/Procedimento/Index" class="waves-effect"> Procedimentos </a></li>
+            <li><a href="/Consulta/Index" class="waves-effect"> Consultas </a></li>
+        </ul>
+        
+            @RenderBody()
+
+            
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+        <!-- Mascara -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+        
+        <script>
+            
+            $(document).ready(function(){
+                // Menu lateral
+                $(".button-collapse").sideNav({
+                    menuWidth: 250
+                });
+
+                // Combobox
+                $('select').material_select();
+
+                // Mascaras
+                $("#Cpf").mask("000.000.000-00");
+                $("#Rg").mask("00.000.000-0");
+                $("#Telefone").mask("(00) 000000000");
+                $("#Cep").mask("00000-000");
+            });         
+        </script>
+
+    </body>
+</html>
